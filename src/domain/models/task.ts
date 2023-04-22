@@ -1,7 +1,7 @@
 type TaskStatus = 'pending' | 'in-progress' | 'completed';
 type TaskPriority = 'low' | 'medium' | 'high';
 
-export type Task = {
+export type TaskModel = {
   id: string;
   title: string;
   description?: string;

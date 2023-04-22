@@ -1,5 +1,5 @@
-import { Task } from '../../models';
+import { TaskModel } from '../../models';
 
 export interface CreateTask {
-  create: (task: Task) => Promise<void>;
+  create: (task: TaskModel) => Promise<void>;
 }

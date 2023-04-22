@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker'
-import { Task } from '../../models';
+import { TaskModel } from '../../models';
 
-export const mockTaskModel = (): Task => ({
+export const mockTaskModel = (): TaskModel => ({
   id: faker.datatype.uuid(),
   title: faker.random.words(5),
   description: faker.random.words(10),
