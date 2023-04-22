@@ -1,4 +1,4 @@
-import { Task } from '../models';
+import { Task } from '../../models';
 
 export interface UpdateTask {
   update: (task: Task) => Promise<void>;
