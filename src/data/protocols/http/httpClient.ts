@@ -1,26 +1,31 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE';
+export enum HttpMethodEnum {
+  GET = 'GET',
+  POST = 'POST',
+  PUT = 'PUT',
+  DELETE = 'DELETE'
+}
 
-enum HttpStatusCodeEnum {
+export enum HttpStatusCodeEnum {
   OK = 200,
   NO_CONTENT = 204,
   BAD_REQUEST = 400,
   NOT_FOUND = 404,
-  INTERNAL_SERVER_ERROR = 500,
+  INTERNAL_SERVER_ERROR = 500
 }
 
 type HttpQueryParam = {
   [key: string]: string
 }
 
-type HttpRequestData = {
-  method: HttpMethod;
+export type HttpRequestData = {
+  method: HttpMethodEnum;
   url: string;
-  queryParams: HttpQueryParam;
-  body: any;
+  queryParams?: HttpQueryParam;
+  body?: any;
 }
 
-type HttpRequestResponse<T> = {
+export type HttpRequestResponse<T> = {
   statusCode: HttpStatusCodeEnum;
   data: T;
 }
