@@ -1,10 +1,10 @@
 import { faker } from '@faker-js/faker';
 import { UnknownError } from '@domain/errors';
-import { mockTaskModel } from '@domain/tests/mocks';
+import { mockTaskModel } from '@domain/test';
 import { HttpEndpoints } from '../../../enums';
 import { HttpMethods, HttpStatusCode } from '../../../protocols';
-import { HttpClientSpy } from '../../../tests';
-import { HttpLoadTask } from './httpLoadTask';
+import { HttpClientSpy } from '../../../test';
+import { HttpLoadTask } from '.';
 
 const makeSut = () => {
   const httpClientSpy = new HttpClientSpy();
@@ -39,7 +39,7 @@ describe('Use cases | Task | HttpLoadTask', () => {
     });
 
     describe('and getting an error', () => {
-      it('returns an UnknownError', async () => {
+      it('throws an UnknownError', async () => {
         const { sut, httpClientSpy } = makeSut();
         httpClientSpy.request = jest.fn().mockRejectedValue(new Error());
 
@@ -75,7 +75,7 @@ describe('Use cases | Task | HttpLoadTask', () => {
     });
 
     describe('and getting an error', () => {
-      it('returns an UnknownError', async () => {
+      it('throws an UnknownError', async () => {
         const { sut, httpClientSpy } = makeSut();
         const { id } = mockTaskModel();
         httpClientSpy.request = jest.fn().mockRejectedValue(new Error());
@@ -113,7 +113,7 @@ describe('Use cases | Task | HttpLoadTask', () => {
     });
 
     describe('and getting an error', () => {
-      it('returns an UnknownError', async () => {
+      it('throws an UnknownError', async () => {
         const { sut, httpClientSpy } = makeSut();
         const projectId = faker.datatype.uuid();
         httpClientSpy.request = jest.fn().mockRejectedValue(new Error());

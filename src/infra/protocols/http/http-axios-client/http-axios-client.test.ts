@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { UnknownError } from '@domain/errors';
-import { mockHttpClientRequestData } from '../../../../data/tests';
-import { mockHttpAxiosClientResponse } from '../../../tests';
-import { HttpAxiosClient } from './httpAxiosClient';
+import { mockHttpClientRequestData } from '@data/test';
+import { mockHttpAxiosClientResponse } from '../../../test';
+import { HttpAxiosClient } from '.';
 
 jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;

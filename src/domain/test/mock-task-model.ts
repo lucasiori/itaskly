@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { TaskModel } from '../../models';
+import { TaskModel } from '../models';
 
 export const mockTaskModel = (): TaskModel => ({
   id: faker.datatype.uuid(),

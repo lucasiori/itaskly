@@ -1,36 +1,37 @@
 import { UnknownError } from '@domain/errors';
-import { mockTaskModel } from '@domain/tests/mocks';
+import { mockTaskModel } from '@domain/test';
 import { HttpEndpoints } from '../../../enums';
 import { HttpMethods } from '../../../protocols';
-import { HttpClientSpy } from '../../../tests';
-import { HttpDeleteTask } from './httpDeleteTask';
+import { HttpClientSpy } from '../../../test';
+import { HttpUpdateTask } from '.';
 
 const makeSut = () => {
   const httpClientSpy = new HttpClientSpy();
-  const sut = new HttpDeleteTask(httpClientSpy);
+  const sut = new HttpUpdateTask(httpClientSpy);
 
   return { sut, httpClientSpy };
 };
 
-describe('Use cases | Task | HttpDeleteTask', () => {
-  describe('when deleting a task', () => {
+describe('Data | Use cases | Task | HttpUpdateTask', () => {
+  describe('when updating a task', () => {
     it('calls the HttpClient with correct data', async () => {
       const { sut, httpClientSpy } = makeSut();
       const task = mockTaskModel();
 
-      await sut.delete(task.id);
+      await sut.update(task);
 
       expect(httpClientSpy.callsCount).toBe(1);
-      expect(httpClientSpy.url).toBe(`${HttpEndpoints.DELETE_TASK}/${task.id}`);
-      expect(httpClientSpy.method).toBe(HttpMethods.DELETE);
+      expect(httpClientSpy.url).toBe(`${HttpEndpoints.UPDATE_TASK}/${task.id}`);
+      expect(httpClientSpy.method).toBe(HttpMethods.PUT);
+      expect(httpClientSpy.body).toEqual(task);
     });
 
     describe('and getting an error', () => {
-      it('returns an UnknownError', async () => {
+      it('throws an UnknownError', async () => {
         const { sut, httpClientSpy } = makeSut();
         httpClientSpy.request = jest.fn().mockRejectedValue(new Error());
 
-        await expect(sut.delete(mockTaskModel().id)).rejects.toThrowError(
+        await expect(sut.update(mockTaskModel())).rejects.toThrowError(
           new UnknownError()
         );
       });
