@@ -3,7 +3,7 @@ import {
   HttpClient,
   HttpRequestData,
   HttpRequestResponse,
-  HttpStatusCodeEnum,
+  HttpStatusCode,
 } from '../protocols';
 
 export class HttpClientSpy implements HttpClient {
@@ -13,7 +13,7 @@ export class HttpClientSpy implements HttpClient {
   queryParams = null as any;
   body = '';
   response = {
-    statusCode: HttpStatusCodeEnum.OK,
+    statusCode: HttpStatusCode.OK,
     data: null as any,
   };
 

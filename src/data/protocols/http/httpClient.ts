@@ -6,7 +6,7 @@ export enum HttpMethods {
   DELETE = 'DELETE',
 }
 
-export enum HttpStatusCodeEnum {
+export enum HttpStatusCode {
   OK = 200,
   NO_CONTENT = 204,
   BAD_REQUEST = 400,
@@ -26,7 +26,7 @@ export type HttpRequestData = {
 };
 
 export type HttpRequestResponse<T> = {
-  statusCode: HttpStatusCodeEnum;
+  statusCode: HttpStatusCode;
   data: T;
 };
 

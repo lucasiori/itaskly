@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 import { UnknownError } from '@domain/errors';
 import { mockTaskModel } from '@domain/tests/mocks';
 import { HttpEndpoints } from '../../../enums';
-import { HttpMethods, HttpStatusCodeEnum } from '../../../protocols';
+import { HttpMethods, HttpStatusCode } from '../../../protocols';
 import { HttpClientSpy } from '../../../tests';
 import { HttpLoadTask } from './httpLoadTask';
 
@@ -29,7 +29,7 @@ describe('Use cases | Task | HttpLoadTask', () => {
       const { sut, httpClientSpy } = makeSut();
       const tasks = [mockTaskModel(), mockTaskModel(), mockTaskModel()];
       httpClientSpy.response = {
-        statusCode: HttpStatusCodeEnum.OK,
+        statusCode: HttpStatusCode.OK,
         data: tasks,
       };
 
@@ -65,7 +65,7 @@ describe('Use cases | Task | HttpLoadTask', () => {
       const { sut, httpClientSpy } = makeSut();
       const task = mockTaskModel();
       httpClientSpy.response = {
-        statusCode: HttpStatusCodeEnum.OK,
+        statusCode: HttpStatusCode.OK,
         data: task,
       };
 
@@ -103,7 +103,7 @@ describe('Use cases | Task | HttpLoadTask', () => {
       const tasks = [mockTaskModel(), mockTaskModel(), mockTaskModel()];
       const projectId = faker.datatype.uuid();
       httpClientSpy.response = {
-        statusCode: HttpStatusCodeEnum.OK,
+        statusCode: HttpStatusCode.OK,
         data: tasks,
       };
 
