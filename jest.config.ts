@@ -3,15 +3,15 @@ module.exports = {
   collectCoverageFrom: [
     '<rootDir>/src/**/*.{ts,tsx}',
     '!<rootDir>/src/**/index.ts',
-    '!**/*.d.ts'
+    '!**/*.d.ts',
   ],
   coverageDirectory: 'coverage',
   testPathIgnorePatterns: ['<rootDir>/node_modules'],
   testEnvironment: 'jsdom',
   transform: {
-    '.+\\.(ts|tsx)$': 'ts-jest'
+    '.+\\.(ts|tsx)$': 'ts-jest',
   },
   moduleNameMapper: {
-    '^@domain/(.*)': '<rootDir>/src/domain/$1'
-  }
-}
+    '^@domain/(.*)': '<rootDir>/src/domain/$1',
+  },
+};

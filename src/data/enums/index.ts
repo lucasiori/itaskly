@@ -1,1 +1,1 @@
-export * from './httpEndpoints'
+export * from './httpEndpoints';

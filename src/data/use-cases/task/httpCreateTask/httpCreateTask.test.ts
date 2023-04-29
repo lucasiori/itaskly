@@ -1,16 +1,16 @@
-import { UnknownError } from "@domain/errors";
-import { mockTaskModel } from "@domain/tests/mocks";
-import { HttpEndpointsEnum } from "../../../enums";
-import { HttpMethodEnum } from "../../../protocols";
-import { HttpClientSpy } from "../../../tests";
-import { HttpCreateTask } from "./httpCreateTask"
+import { UnknownError } from '@domain/errors';
+import { mockTaskModel } from '@domain/tests/mocks';
+import { HttpEndpointsEnum } from '../../../enums';
+import { HttpMethodEnum } from '../../../protocols';
+import { HttpClientSpy } from '../../../tests';
+import { HttpCreateTask } from './httpCreateTask';
 
 const makeSut = () => {
   const httpClientSpy = new HttpClientSpy();
   const sut = new HttpCreateTask(httpClientSpy);
 
-  return { sut, httpClientSpy }
-}
+  return { sut, httpClientSpy };
+};
 
 describe('Use cases | Task | HttpCreateTask', () => {
   describe('when creating a task', () => {
@@ -19,7 +19,7 @@ describe('Use cases | Task | HttpCreateTask', () => {
       const task = mockTaskModel();
 
       await sut.create(task);
-    
+
       expect(httpClientSpy.callsCount).toBe(1);
       expect(httpClientSpy.url).toBe(HttpEndpointsEnum.CREATE_TASK);
       expect(httpClientSpy.method).toBe(HttpMethodEnum.POST);
@@ -31,8 +31,10 @@ describe('Use cases | Task | HttpCreateTask', () => {
         const { sut, httpClientSpy } = makeSut();
         httpClientSpy.request = jest.fn().mockRejectedValue(new Error());
 
-        await expect(sut.create(mockTaskModel())).rejects.toThrowError(new UnknownError());
+        await expect(sut.create(mockTaskModel())).rejects.toThrowError(
+          new UnknownError()
+        );
       });
-    })
+    });
   });
-})
+});

@@ -12,10 +12,10 @@ export class HttpCreateTask implements CreateTask {
       await this.httpClient.request({
         method: HttpMethodEnum.POST,
         url: HttpEndpointsEnum.CREATE_TASK,
-        body: task
-      })
+        body: task,
+      });
     } catch {
-      throw new UnknownError()
+      throw new UnknownError();
     }
-  }
+  };
 }

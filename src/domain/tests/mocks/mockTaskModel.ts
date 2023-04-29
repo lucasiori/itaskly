@@ -1,4 +1,4 @@
-import { faker } from '@faker-js/faker'
+import { faker } from '@faker-js/faker';
 import { TaskModel } from '../../models';
 
 export const mockTaskModel = (): TaskModel => ({
@@ -10,5 +10,5 @@ export const mockTaskModel = (): TaskModel => ({
   priority: 'low',
   project: faker.datatype.uuid(),
   createdAt: faker.date.recent(20),
-  updatedAt: faker.date.recent(20)
-})
+  updatedAt: faker.date.recent(20),
+});

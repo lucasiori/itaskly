@@ -1,1 +1,1 @@
-export * from './mockTaskModel'
+export * from './mockTaskModel';

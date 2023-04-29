@@ -11,4 +11,4 @@ export type TaskModel = {
   project?: string;
   createdAt: Date;
   updatedAt: Date;
-}
+};
