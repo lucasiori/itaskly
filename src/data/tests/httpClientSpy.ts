@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   HttpClient,
   HttpRequestData,
@@ -9,10 +10,11 @@ export class HttpClientSpy implements HttpClient {
   callsCount = 0;
   method = '';
   url = '';
+  queryParams = null as any;
   body = '';
   response = {
     statusCode: HttpStatusCodeEnum.OK,
-    data: null,
+    data: null as any,
   };
 
   request = async <T>(
@@ -21,6 +23,7 @@ export class HttpClientSpy implements HttpClient {
     this.callsCount = 1;
     this.method = data.method;
     this.url = data.url;
+    this.queryParams = data.queryParams;
     this.body = data.body;
 
     return this.response as HttpRequestResponse<T>;
