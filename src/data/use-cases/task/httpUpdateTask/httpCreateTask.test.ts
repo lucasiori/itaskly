@@ -1,7 +1,7 @@
 import { UnknownError } from '@domain/errors';
 import { mockTaskModel } from '@domain/tests/mocks';
-import { HttpEndpointsEnum } from '../../../enums';
-import { HttpMethodEnum } from '../../../protocols';
+import { HttpEndpoints } from '../../../enums';
+import { HttpMethods } from '../../../protocols';
 import { HttpClientSpy } from '../../../tests';
 import { HttpUpdateTask } from './httpUpdateTask';
 
@@ -21,10 +21,8 @@ describe('Use cases | Task | HttpUpdateTask', () => {
       await sut.update(task);
 
       expect(httpClientSpy.callsCount).toBe(1);
-      expect(httpClientSpy.url).toBe(
-        `${HttpEndpointsEnum.UPDATE_TASK}/${task.id}`
-      );
-      expect(httpClientSpy.method).toBe(HttpMethodEnum.PUT);
+      expect(httpClientSpy.url).toBe(`${HttpEndpoints.UPDATE_TASK}/${task.id}`);
+      expect(httpClientSpy.method).toBe(HttpMethods.PUT);
       expect(httpClientSpy.body).toEqual(task);
     });
 

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export enum HttpMethodEnum {
+export enum HttpMethods {
   GET = 'GET',
   POST = 'POST',
   PUT = 'PUT',
@@ -19,7 +19,7 @@ type HttpQueryParam = {
 };
 
 export type HttpRequestData = {
-  method: HttpMethodEnum;
+  method: HttpMethods;
   url: string;
   queryParams?: HttpQueryParam;
   body?: any;
