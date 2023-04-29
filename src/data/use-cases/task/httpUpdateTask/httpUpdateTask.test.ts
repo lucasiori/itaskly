@@ -13,7 +13,7 @@ const makeSut = () => {
 };
 
 describe('Use cases | Task | HttpUpdateTask', () => {
-  describe('when creating a task', () => {
+  describe('when updating a task', () => {
     it('calls the HttpClient with correct data', async () => {
       const { sut, httpClientSpy } = makeSut();
       const task = mockTaskModel();
