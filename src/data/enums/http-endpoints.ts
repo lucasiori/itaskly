@@ -5,4 +5,5 @@ export enum HttpEndpoints {
   LOAD_TASK = 'http://localhost:8080/tasks',
   CREATE_PROJECT = 'http://localhost:8000/projects',
   UPDATE_PROJECT = 'http://localhost:8000/projects',
+  DELETE_PROJECT = 'http://localhost:8080/projects',
 }
