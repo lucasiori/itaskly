@@ -1,5 +1,5 @@
-import type { Project } from '../../models';
+import type { ProjectModel } from '../../models';
 
 export interface UpdateProject {
-  update: (project: Project) => Promise<void>;
+  update: (project: ProjectModel) => Promise<void>;
 }

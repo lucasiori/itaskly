@@ -1,5 +1,5 @@
-import { Project } from '../../models';
+import { ProjectModel } from '../../models';
 
 export interface LoadProject {
-  loadAll: () => Promise<Project[]>;
+  loadAll: () => Promise<ProjectModel[]>;
 }

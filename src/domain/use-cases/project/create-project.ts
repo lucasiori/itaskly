@@ -1,5 +1,5 @@
-import type { Project } from '../../models';
+import type { ProjectModel } from '../../models';
 
 export interface CreateProject {
-  create: (project: Project) => Promise<void>;
+  create: (project: ProjectModel) => Promise<void>;
 }

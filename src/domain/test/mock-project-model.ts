@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
-import type { Project } from '@domain/models';
+import type { ProjectModel } from '@domain/models';
 
-export const mockProjectModel = (): Project => ({
+export const mockProjectModel = (): ProjectModel => ({
   id: faker.datatype.uuid(),
   title: faker.random.words(5),
   status: 'pending',
