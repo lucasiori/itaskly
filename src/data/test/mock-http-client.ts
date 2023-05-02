@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { HttpMethods, HttpRequestData } from '../protocols';
+import { HttpMethods, type HttpRequestData } from '../protocols';
 
 export const mockHttpClientRequestData = (): HttpRequestData => ({
   method: faker.helpers.arrayElement(Object.values(HttpMethods)) as HttpMethods,

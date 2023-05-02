@@ -1,5 +1,5 @@
-import { AxiosResponse } from 'axios';
 import { faker } from '@faker-js/faker';
+import type { AxiosResponse } from 'axios';
 
 export const mockHttpAxiosClientResponse = (): Pick<
   AxiosResponse,

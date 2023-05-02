@@ -1,6 +1,6 @@
-import axios, { AxiosResponse } from 'axios';
+import axios, { type AxiosResponse } from 'axios';
 import { UnknownError } from '@domain/errors';
-import {
+import type {
   HttpClient,
   HttpRequestData,
   HttpRequestResponse,

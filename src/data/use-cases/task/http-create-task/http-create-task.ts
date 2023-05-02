@@ -1,8 +1,8 @@
 import { UnknownError } from '@domain/errors';
-import { TaskModel } from '@domain/models';
-import { CreateTask } from '@domain/use-cases';
 import { HttpEndpoints } from '../../../enums';
-import { HttpClient, HttpMethods } from '../../../protocols';
+import { HttpMethods, type HttpClient } from '../../../protocols';
+import type { TaskModel } from '@domain/models';
+import type { CreateTask } from '@domain/use-cases';
 
 export class HttpCreateTask implements CreateTask {
   constructor(private readonly httpClient: HttpClient) {}

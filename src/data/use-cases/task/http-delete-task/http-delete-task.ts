@@ -1,7 +1,7 @@
 import { UnknownError } from '@domain/errors';
-import { DeleteTask } from '@domain/use-cases';
 import { HttpEndpoints } from '../../../enums';
-import { HttpClient, HttpMethods } from '../../../protocols';
+import { HttpMethods, type HttpClient } from '../../../protocols';
+import type { DeleteTask } from '@domain/use-cases';
 
 export class HttpDeleteTask implements DeleteTask {
   constructor(private readonly httpClient: HttpClient) {}

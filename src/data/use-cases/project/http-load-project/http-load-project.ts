@@ -1,8 +1,8 @@
 import { UnknownError } from '@domain/errors';
-import { ProjectModel } from '@domain/models';
-import { LoadProject } from '@domain/use-cases';
 import { HttpEndpoints } from '../../../enums';
-import { HttpClient, HttpMethods } from '../../../protocols';
+import { HttpMethods, type HttpClient } from '../../../protocols';
+import type { ProjectModel } from '@domain/models';
+import type { LoadProject } from '@domain/use-cases';
 
 export class HttpLoadProject implements LoadProject {
   constructor(private readonly httpClient: HttpClient) {}

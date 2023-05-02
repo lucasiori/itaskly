@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
-  HttpClient,
-  HttpRequestData,
-  HttpRequestResponse,
   HttpStatusCode,
+  type HttpClient,
+  type HttpRequestData,
+  type HttpRequestResponse,
 } from '../protocols';
 
 export class HttpClientSpy implements HttpClient {

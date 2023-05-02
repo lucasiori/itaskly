@@ -1,4 +1,4 @@
-import { TaskModel } from '../../models';
+import type { TaskModel } from '../../models';
 
 export interface LoadTask {
   loadAll: () => Promise<TaskModel[]>;
