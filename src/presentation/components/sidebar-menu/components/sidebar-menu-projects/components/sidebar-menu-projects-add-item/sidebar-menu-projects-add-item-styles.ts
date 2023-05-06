@@ -1,19 +1,26 @@
 import styled from 'styled-components';
+import type {
+  StyledAddButtonContainerProps,
+  StyledNewItemInputContainerProps,
+  StyledNewItemProps,
+} from './sidebar-menu-projects-add-item-types';
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-export const NewItem = styled.div`
+export const NewItem = styled.div<StyledNewItemProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 3rem;
+  gap: 1.5rem;
   padding: 0.25rem 0;
+  opacity: ${({ $isAddingNewProject }) => ($isAddingNewProject ? 1 : 0)};
+  transition: opacity 150ms ease-in-out;
 `;
 
-export const NewInputContainer = styled.div`
+export const NewItemInputContainer = styled.div<StyledNewItemInputContainerProps>`
   position: relative;
   display: flex;
   flex: 1;
@@ -21,10 +28,10 @@ export const NewInputContainer = styled.div`
   &::before {
     content: '';
     position: absolute;
-    width: 0;
+    width: ${({ $hasError }) => ($hasError ? '100%' : '0')};
     height: 2px;
     display: block;
-    background-color: #8b65fa;
+    background-color: ${({ $hasError }) => ($hasError ? '#f63e3e' : '#8b65fa')};
     bottom: 0;
     left: 0;
     transition: width 150ms ease-in-out;
@@ -54,8 +61,19 @@ export const NewItemInput = styled.input`
   }
 `;
 
-export const AddButtonContainer = styled.div`
+export const NewItemActions = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+export const AddButtonContainer = styled.div<StyledAddButtonContainerProps>`
   display: flex;
   align-self: center;
   margin-top: 1.25rem;
+  opacity: ${({ $isAddingNewProject }) => ($isAddingNewProject ? 0 : 1)};
+  transform: ${({ $isAddingNewProject }) => {
+    return $isAddingNewProject ? 'translateY(0)' : 'translateY(-2.25rem)';
+  }};
+  transition: transform 150ms ease-in-out, opacity 100ms ease-in-out;
 `;

@@ -3,6 +3,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
   * {
     font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.05rem;
     padding: 0;
     margin: 0;
     -webkit-font-smoothing: antialiased;
@@ -10,10 +11,6 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     background-color: #f8fafb;
-  }
-
-  h1, h2, h3, h4, h5, h6, strong, input {
-    letter-spacing: 0.05rem;
   }
 
   ul {

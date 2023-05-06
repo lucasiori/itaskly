@@ -1,5 +1,6 @@
 import {
   AddIcon,
+  ConfirmIcon,
   DeleteIcon,
   EditIcon,
   ProjectIcon,
@@ -9,6 +10,7 @@ import { IconProps, IconsMapper } from './icon-types';
 export const Icon = ({ icon }: IconProps) => {
   const iconsMapper: IconsMapper = {
     add: AddIcon,
+    confirm: ConfirmIcon,
     delete: DeleteIcon,
     edit: EditIcon,
     project: ProjectIcon,

@@ -1,6 +1,6 @@
 import type React from 'react';
 
-type Icon = 'add' | 'delete' | 'edit' | 'project';
+type Icon = 'add' | 'confirm' | 'delete' | 'edit' | 'project';
 
 export type IconsMapper = {
   [key in Icon]: React.FC;
