@@ -42,6 +42,7 @@ export const NewItemInput = styled.input`
   border: 0;
   border-bottom: 1px solid #ada5bd;
   color: #ada5bd;
+  font-size: 0.75rem;
   padding: 0.5rem 0;
 
   &::placeholder {

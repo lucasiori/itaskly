@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: #f8fafb;
   }
 
-  h1, h2, h3, h4, h5, h6, strong {
+  h1, h2, h3, h4, h5, h6, strong, input {
     letter-spacing: 0.05rem;
   }
 
