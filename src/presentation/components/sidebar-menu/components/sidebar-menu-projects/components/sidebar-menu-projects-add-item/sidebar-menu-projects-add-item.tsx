@@ -1,4 +1,4 @@
-import { AddIcon, EditIcon } from '@presentation/assets';
+import { Icon } from '@presentation/components';
 import {
   AddButton,
   Container,
@@ -20,12 +20,12 @@ export const SidebarMenuProjectsAddItem = () => {
         </NewInputContainer>
 
         <button type="button">
-          <EditIcon />
+          <Icon icon="edit" />
         </button>
       </NewItem>
 
       <AddButton type="button">
-        <AddIcon />
+        <Icon icon="add" />
       </AddButton>
     </Container>
   );

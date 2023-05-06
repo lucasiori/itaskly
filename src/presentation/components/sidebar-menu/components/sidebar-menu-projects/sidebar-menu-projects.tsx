@@ -1,4 +1,4 @@
-import { ProjectIcon } from '@presentation/assets';
+import { Icon } from '@presentation/components';
 import {
   Container,
   Header,
@@ -14,7 +14,7 @@ export const SidebarMenuProjects = () => {
   return (
     <Container>
       <Header>
-        <ProjectIcon />
+        <Icon icon="project" />
         <Title>Projetos</Title>
         <ProjectsAmount>3 / 5</ProjectsAmount>
       </Header>
