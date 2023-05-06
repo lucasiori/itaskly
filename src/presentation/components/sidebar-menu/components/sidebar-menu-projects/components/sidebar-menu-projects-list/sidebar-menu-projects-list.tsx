@@ -1,4 +1,4 @@
-import { Icon } from '@presentation/components';
+import { IconButton } from '@presentation/components/icon-button';
 import {
   ProjectItem,
   ProjectActions,
@@ -13,12 +13,8 @@ export const SidebarMenuProjectsList = () => {
         <ProjectName>Projeto 1</ProjectName>
         <ProjectTasksAmount>1 / 3</ProjectTasksAmount>
         <ProjectActions>
-          <button type="button">
-            <Icon icon="edit" />
-          </button>
-          <button type="button">
-            <Icon icon="delete" />
-          </button>
+          <IconButton icon="edit" />
+          <IconButton icon="delete" />
         </ProjectActions>
       </ProjectItem>
 
@@ -26,12 +22,8 @@ export const SidebarMenuProjectsList = () => {
         <ProjectName>Projeto 1</ProjectName>
         <ProjectTasksAmount>1 / 3</ProjectTasksAmount>
         <ProjectActions>
-          <button type="button">
-            <Icon icon="edit" />
-          </button>
-          <button type="button">
-            <Icon icon="delete" />
-          </button>
+          <IconButton icon="edit" />
+          <IconButton icon="delete" />
         </ProjectActions>
       </ProjectItem>
 
@@ -39,12 +31,8 @@ export const SidebarMenuProjectsList = () => {
         <ProjectName>Projeto 1</ProjectName>
         <ProjectTasksAmount>1 / 3</ProjectTasksAmount>
         <ProjectActions>
-          <button type="button">
-            <Icon icon="edit" />
-          </button>
-          <button type="button">
-            <Icon icon="delete" />
-          </button>
+          <IconButton icon="edit" />
+          <IconButton icon="delete" />
         </ProjectActions>
       </ProjectItem>
     </ul>

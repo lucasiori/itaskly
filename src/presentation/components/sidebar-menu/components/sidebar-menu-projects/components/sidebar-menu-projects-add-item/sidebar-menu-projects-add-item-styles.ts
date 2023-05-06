@@ -54,7 +54,7 @@ export const NewItemInput = styled.input`
   }
 `;
 
-export const AddButton = styled.button`
+export const AddButtonContainer = styled.div`
   display: flex;
   align-self: center;
   margin-top: 1.25rem;

@@ -1,6 +1,6 @@
-import { Icon } from '@presentation/components';
+import { IconButton } from '@presentation/components/icon-button';
 import {
-  AddButton,
+  AddButtonContainer,
   Container,
   NewInputContainer,
   NewItem,
@@ -19,14 +19,12 @@ export const SidebarMenuProjectsAddItem = () => {
           />
         </NewInputContainer>
 
-        <button type="button">
-          <Icon icon="edit" />
-        </button>
+        <IconButton icon="edit" />
       </NewItem>
 
-      <AddButton type="button">
-        <Icon icon="add" />
-      </AddButton>
+      <AddButtonContainer>
+        <IconButton icon="add" />
+      </AddButtonContainer>
     </Container>
   );
 };

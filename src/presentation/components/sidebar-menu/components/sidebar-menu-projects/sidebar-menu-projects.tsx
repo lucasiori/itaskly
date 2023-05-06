@@ -1,4 +1,4 @@
-import { Icon } from '@presentation/components';
+import { Icon } from '@presentation/components/icon';
 import {
   Container,
   Header,
