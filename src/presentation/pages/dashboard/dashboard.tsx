@@ -1,3 +1,14 @@
+import { SidebarMenu } from '@presentation/components';
+import { DashboardContainer, GlobalStyle } from './dashboard-styles';
+
 export const Dashboard = () => {
-  return <h1>Dashboard page</h1>;
+  return (
+    <>
+      <GlobalStyle />
+
+      <DashboardContainer>
+        <SidebarMenu />
+      </DashboardContainer>
+    </>
+  );
 };
