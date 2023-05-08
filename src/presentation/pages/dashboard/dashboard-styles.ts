@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     letter-spacing: 0.05rem;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
   }
 

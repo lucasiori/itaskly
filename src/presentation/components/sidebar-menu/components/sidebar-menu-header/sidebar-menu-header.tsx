@@ -1,17 +1,24 @@
 import { AppLogo } from '@presentation/components/app-logo';
+import { IconButton } from '@presentation/components/icon-button';
 import {
-  AppName,
+  SidebarMenuHeaderAppName,
+  SidebarMenuHeaderCloseButtonContainer,
   SidebarMenuHeaderContainer,
 } from './sidebar-menu-header-styles';
+import type { SidebarMenuHeaderProps } from './sidebar-menu-header-types';
 
-export const SidebarMenuHeader = () => {
+export const SidebarMenuHeader = ({ onCloseMenu }: SidebarMenuHeaderProps) => {
   return (
     <SidebarMenuHeaderContainer>
       <AppLogo />
-      <AppName>
+      <SidebarMenuHeaderAppName>
         iTaskly
         <strong>WEB APP</strong>
-      </AppName>
+      </SidebarMenuHeaderAppName>
+
+      <SidebarMenuHeaderCloseButtonContainer>
+        <IconButton icon="cancel" title="Fechar menu" onClick={onCloseMenu} />
+      </SidebarMenuHeaderCloseButtonContainer>
     </SidebarMenuHeaderContainer>
   );
 };
