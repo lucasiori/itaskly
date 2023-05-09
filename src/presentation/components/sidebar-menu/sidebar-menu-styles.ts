@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { theme } from '@presentation/styles';
 import type {
   StyledSidebarMenuContainerProps,
   StyledSidebarMenuOverlayProps,
@@ -23,7 +24,7 @@ export const SidebarMenuContainer = styled.aside<StyledSidebarMenuContainerProps
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  background-color: #fff;
+  background-color: ${theme.colors.white};
   box-shadow: none;
   padding: 1.5rem 1rem;
   bottom: 0;
@@ -35,7 +36,7 @@ export const SidebarMenuContainer = styled.aside<StyledSidebarMenuContainerProps
   @media (min-width: 768px) {
     width: 370px;
     height: 100vh;
-    box-shadow: 0 0 16px 32px rgba(0, 0, 0, 0.0092);
+    box-shadow: ${theme.boxShadow};
     padding: 3rem 2rem;
     transform: translateY(0);
   }

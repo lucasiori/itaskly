@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { theme } from '@presentation/styles';
 import type {
   StyledAddButtonContainerProps,
   StyledNewItemInputContainerProps,
@@ -31,7 +32,9 @@ export const NewItemInputContainer = styled.div<StyledNewItemInputContainerProps
     width: ${({ $hasError }) => ($hasError ? '100%' : '0')};
     height: 2px;
     display: block;
-    background-color: ${({ $hasError }) => ($hasError ? '#f63e3e' : '#8b65fa')};
+    background-color: ${({ $hasError }) => {
+      return $hasError ? theme.colors.red : theme.colors.secondary;
+    }};
     bottom: 0;
     left: 0;
     transition: width 150ms ease-in-out;
@@ -47,13 +50,13 @@ export const NewItemInputContainer = styled.div<StyledNewItemInputContainerProps
 export const NewItemInput = styled.input`
   width: 100%;
   border: 0;
-  border-bottom: 1px solid #ada5bd;
-  color: #ada5bd;
+  border-bottom: 1px solid ${theme.colors.subtitle};
+  color: ${theme.colors.subtitle};
   font-size: 0.75rem;
   padding: 0.5rem 0;
 
   &::placeholder {
-    color: #ada5db;
+    color: ${theme.colors.subtitle};
   }
 
   &:focus {

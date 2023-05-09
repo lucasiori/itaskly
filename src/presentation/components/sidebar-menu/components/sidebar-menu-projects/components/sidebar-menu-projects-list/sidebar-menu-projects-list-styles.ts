@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { theme } from '@presentation/styles';
 
 export const ProjectItem = styled.li`
   display: flex;
@@ -7,16 +8,16 @@ export const ProjectItem = styled.li`
 `;
 
 export const ProjectName = styled.strong`
-  color: #2e1955;
+  color: ${theme.colors.text};
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: ${theme.fontWeight.semiBold};
   margin-right: auto;
 `;
 
 export const ProjectTasksAmount = styled.span`
-  color: #ada5bd;
+  color: ${theme.colors.subtitle};
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: ${theme.fontWeight.semiBold};
   margin-right: 1.5rem;
 `;
 

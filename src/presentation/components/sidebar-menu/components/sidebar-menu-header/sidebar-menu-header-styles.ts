@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { theme } from '@presentation/styles';
 
 export const SidebarMenuHeaderContainer = styled.header`
   display: flex;
@@ -21,12 +22,12 @@ export const SidebarMenuHeaderContainer = styled.header`
 export const SidebarMenuHeaderAppName = styled.h3`
   display: flex;
   flex-direction: column;
-  color: #2e1955;
+  color: ${theme.colors.title};
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: ${theme.fontWeight.bold};
 
   strong {
-    color: #ada5bd;
+    color: ${theme.colors.subtitle};
     font-size: 0.75rem;
     letter-spacing: 0.1rem;
   }

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { SidebarMenu } from '@presentation/components';
-import { DashboardContainer, GlobalStyle } from './dashboard-styles';
+import { GlobalStyle } from '@presentation/styles';
+import { DashboardContainer } from './dashboard-styles';
 
 export const Dashboard = () => {
   const [isSidebarMenuOpened, setIsSidebarMenuOpened] = useState(false);

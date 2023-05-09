@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { theme } from '@presentation/styles';
 
 export const Container = styled.section`
   display: flex;
@@ -14,13 +15,13 @@ export const Header = styled.header`
 `;
 
 export const Title = styled.h5`
-  color: #2e1955;
+  color: ${theme.colors.title};
   font-size: 1rem;
 `;
 
 export const ProjectsAmount = styled.span`
-  color: #ada5bd;
+  color: ${theme.colors.subtitle};
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: ${theme.fontWeight.semiBold};
   margin-left: auto;
 `;
