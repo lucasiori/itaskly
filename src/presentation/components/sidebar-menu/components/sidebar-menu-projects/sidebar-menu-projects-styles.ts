@@ -21,7 +21,7 @@ export const Title = styled.h5`
 
 export const ProjectsAmount = styled.span`
   color: ${theme.colors.subtitle};
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-weight: ${theme.fontWeight.semiBold};
   margin-left: auto;
 `;
