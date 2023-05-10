@@ -1,11 +1,5 @@
-import type React from 'react';
-
-type Icon = 'add' | 'cancel' | 'confirm' | 'delete' | 'edit' | 'project';
-
-export type IconsMapper = {
-  [key in Icon]: React.FC;
-};
+import type { Icon, IconProps as BaseIconProps } from '@phosphor-icons/react';
 
 export type IconProps = {
   icon: Icon;
-};
+} & BaseIconProps;

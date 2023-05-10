@@ -1,3 +1,4 @@
+import { NotePencil, Trash } from '@phosphor-icons/react';
 import { IconButton } from '@presentation/components/icon-button';
 import {
   ProjectItem,
@@ -13,8 +14,8 @@ export const SidebarMenuProjectsList = () => {
         <ProjectName>Projeto 1</ProjectName>
         <ProjectTasksAmount>1 / 3</ProjectTasksAmount>
         <ProjectActions>
-          <IconButton icon="edit" />
-          <IconButton icon="delete" />
+          <IconButton icon={NotePencil} iconProps={{ size: 20 }} />
+          <IconButton icon={Trash} iconProps={{ size: 20 }} />
         </ProjectActions>
       </ProjectItem>
 
@@ -22,8 +23,8 @@ export const SidebarMenuProjectsList = () => {
         <ProjectName>Projeto 1</ProjectName>
         <ProjectTasksAmount>1 / 3</ProjectTasksAmount>
         <ProjectActions>
-          <IconButton icon="edit" />
-          <IconButton icon="delete" />
+          <IconButton icon={NotePencil} iconProps={{ size: 20 }} />
+          <IconButton icon={Trash} iconProps={{ size: 20 }} />
         </ProjectActions>
       </ProjectItem>
 
@@ -31,8 +32,8 @@ export const SidebarMenuProjectsList = () => {
         <ProjectName>Projeto 1</ProjectName>
         <ProjectTasksAmount>1 / 3</ProjectTasksAmount>
         <ProjectActions>
-          <IconButton icon="edit" />
-          <IconButton icon="delete" />
+          <IconButton icon={NotePencil} iconProps={{ size: 20 }} />
+          <IconButton icon={Trash} iconProps={{ size: 20 }} />
         </ProjectActions>
       </ProjectItem>
     </ul>

@@ -1,3 +1,4 @@
+import { XCircle } from '@phosphor-icons/react';
 import { AppLogo } from '@presentation/components/app-logo';
 import { IconButton } from '@presentation/components/icon-button';
 import {
@@ -17,7 +18,12 @@ export const SidebarMenuHeader = ({ onCloseMenu }: SidebarMenuHeaderProps) => {
       </SidebarMenuHeaderAppName>
 
       <SidebarMenuHeaderCloseButtonContainer>
-        <IconButton icon="cancel" title="Fechar menu" onClick={onCloseMenu} />
+        <IconButton
+          icon={XCircle}
+          iconProps={{ size: 36 }}
+          title="Fechar menu"
+          onClick={onCloseMenu}
+        />
       </SidebarMenuHeaderCloseButtonContainer>
     </SidebarMenuHeaderContainer>
   );

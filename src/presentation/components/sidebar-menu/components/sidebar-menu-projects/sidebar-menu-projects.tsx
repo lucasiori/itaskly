@@ -1,4 +1,6 @@
+import { ChartBar } from '@phosphor-icons/react';
 import { Icon } from '@presentation/components/icon';
+import { theme } from '@presentation/styles';
 import {
   Container,
   Header,
@@ -14,7 +16,7 @@ export const SidebarMenuProjects = () => {
   return (
     <Container>
       <Header>
-        <Icon icon="project" />
+        <Icon icon={ChartBar} size={32} color={theme.colors.primary} />
         <Title>Projetos</Title>
         <ProjectsAmount>3 / 5</ProjectsAmount>
       </Header>

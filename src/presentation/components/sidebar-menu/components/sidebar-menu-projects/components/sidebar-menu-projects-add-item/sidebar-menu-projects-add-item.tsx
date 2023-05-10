@@ -1,3 +1,4 @@
+import { CheckCircle, PlusCircle, Trash } from '@phosphor-icons/react';
 import { IconButton } from '@presentation/components/icon-button';
 import { useNewProject } from './hooks';
 import {
@@ -29,12 +30,14 @@ export const SidebarMenuProjectsAddItem = () => {
 
         <NewItemActions>
           <IconButton
-            icon="confirm"
+            icon={CheckCircle}
+            iconProps={{ size: 20 }}
             title="Salvar projeto"
             onClick={handlers.save}
           />
           <IconButton
-            icon="delete"
+            icon={Trash}
+            iconProps={{ size: 20 }}
             title="Cancelar"
             onClick={handlers.cancel}
           />
@@ -43,7 +46,8 @@ export const SidebarMenuProjectsAddItem = () => {
 
       <AddButtonContainer $isAddingNewProject={metadata.isAdding}>
         <IconButton
-          icon="add"
+          icon={PlusCircle}
+          iconProps={{ size: 32 }}
           title="Adicionar novo projeto"
           disabled={metadata.isAdding}
           onClick={handlers.add}
