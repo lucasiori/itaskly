@@ -47,7 +47,7 @@ export const SidebarMenuProjectsAddItem = () => {
       <AddButtonContainer $isAddingNewProject={metadata.isAdding}>
         <IconButton
           icon={PlusCircle}
-          iconProps={{ size: 32 }}
+          iconProps={{ size: 36, weight: 'light' }}
           title="Adicionar novo projeto"
           disabled={metadata.isAdding}
           onClick={handlers.add}

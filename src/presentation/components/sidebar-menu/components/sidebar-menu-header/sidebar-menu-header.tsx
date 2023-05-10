@@ -2,7 +2,6 @@ import { XCircle } from '@phosphor-icons/react';
 import { AppLogo } from '@presentation/components/app-logo';
 import { IconButton } from '@presentation/components/icon-button';
 import {
-  SidebarMenuHeaderAppName,
   SidebarMenuHeaderCloseButtonContainer,
   SidebarMenuHeaderContainer,
 } from './sidebar-menu-header-styles';
@@ -12,10 +11,6 @@ export const SidebarMenuHeader = ({ onCloseMenu }: SidebarMenuHeaderProps) => {
   return (
     <SidebarMenuHeaderContainer>
       <AppLogo />
-      <SidebarMenuHeaderAppName>
-        iTaskly
-        <strong>WEB APP</strong>
-      </SidebarMenuHeaderAppName>
 
       <SidebarMenuHeaderCloseButtonContainer>
         <IconButton
