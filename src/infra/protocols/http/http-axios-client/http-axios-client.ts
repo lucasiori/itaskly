@@ -6,6 +6,8 @@ import type {
   HttpRequestResponse,
 } from '@data/protocols';
 
+const BASE_URL = 'http://localhost:3000';
+
 export class HttpAxiosClient implements HttpClient {
   request = async <T = void>(
     data: HttpRequestData
@@ -15,7 +17,7 @@ export class HttpAxiosClient implements HttpClient {
     try {
       response = await axios.request<T>({
         method: data.method,
-        url: data.url,
+        url: `${BASE_URL}${data.url}`,
         params: data.queryParams,
         data: data.body,
       });
