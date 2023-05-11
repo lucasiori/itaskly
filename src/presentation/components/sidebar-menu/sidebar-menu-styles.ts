@@ -20,13 +20,14 @@ export const SidebarMenuOverlay = styled.div<StyledSidebarMenuOverlayProps>`
 export const SidebarMenuContainer = styled.aside<StyledSidebarMenuContainerProps>`
   position: fixed;
   width: 100vw;
-  height: 80vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   gap: 3rem;
   background-color: ${theme.colors.white};
+  border-radius: 3rem 3rem 0 0;
   box-shadow: none;
-  padding: 1.5rem 1rem;
+  padding: 3rem 2rem;
   bottom: 0;
   transform: ${({ $isMenuOpened }) => {
     return $isMenuOpened ? 'translateY(0)' : 'translateY(150%)';
@@ -36,8 +37,8 @@ export const SidebarMenuContainer = styled.aside<StyledSidebarMenuContainerProps
   @media (min-width: 768px) {
     width: 370px;
     height: 100vh;
+    border-radius: 0;
     box-shadow: ${theme.boxShadow};
-    padding: 3rem 2rem;
     transform: translateY(0);
   }
 `;
