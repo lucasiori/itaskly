@@ -11,7 +11,7 @@ const ProjectsContext = createContext<ProjectsContextValue>(
 
 export const ProjectsContextProvider = ({
   children,
-  loadProjects,
+  loadProject,
 }: ProjectsContextProps) => {
   const [data, setData] = useState<ProjectsContextValue['data']>({
     projects: [],
@@ -35,8 +35,8 @@ export const ProjectsContextProvider = ({
   };
 
   useEffect(() => {
-    loadProjects.loadAll().then(onLoadSuccess).catch(onLoadError);
-  }, [loadProjects]);
+    loadProject.loadAll().then(onLoadSuccess).catch(onLoadError);
+  }, [loadProject]);
 
   return (
     <ProjectsContext.Provider value={{ data, state }}>

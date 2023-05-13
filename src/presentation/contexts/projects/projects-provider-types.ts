@@ -14,5 +14,5 @@ export type ProjectsContextValue = {
 
 export type ProjectsContextProps = {
   children: React.ReactNode;
-  loadProjects: LoadProject;
+  loadProject: LoadProject;
 };
