@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import { useProjectsContext } from '@presentation/contexts';
 import type { State, UseNewProject } from './use-new-project.types';
 
 export const useNewProject: UseNewProject = () => {
+  const { handlers } = useProjectsContext();
+
   const [state, setState] = useState<State>({
     project: { title: '' },
     isAdding: false,
@@ -30,7 +33,7 @@ export const useNewProject: UseNewProject = () => {
       return;
     }
 
-    alert(state.project.title);
+    handlers.createProject(state.project.title);
     resetState();
   };
 
