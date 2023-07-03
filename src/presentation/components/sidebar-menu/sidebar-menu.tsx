@@ -1,17 +1,11 @@
 import { SidebarMenuHeader, SidebarMenuProjects } from './components';
-import {
-  SidebarMenuContainer,
-  SidebarMenuOverlay,
-} from './sidebar-menu-styles';
-import type { SidebarMenuProps } from './sidebar-menu-types';
+import { SidebarMenuContainer } from './sidebar-menu-styles';
 
-export const SidebarMenu = ({ isOpened, onClose }: SidebarMenuProps) => {
+export const SidebarMenu = () => {
   return (
     <>
-      <SidebarMenuOverlay $isMenuOpened={isOpened} onClick={onClose} />
-
-      <SidebarMenuContainer $isMenuOpened={isOpened}>
-        <SidebarMenuHeader onCloseMenu={onClose} />
+      <SidebarMenuContainer>
+        <SidebarMenuHeader />
         <SidebarMenuProjects />
       </SidebarMenuContainer>
     </>
