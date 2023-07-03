@@ -1,5 +1,6 @@
 import { NotePencil, Trash } from '@phosphor-icons/react';
-import { IconButton } from '@presentation/components/icon-button';
+import { useProjectsContext } from '@presentation/contexts';
+import { IconButton } from '@presentation/components';
 import {
   ProjectItem,
   ProjectActions,
@@ -8,34 +9,20 @@ import {
 } from './sidebar-menu-projects-list-styles';
 
 export const SidebarMenuProjectsList = () => {
+  const { data } = useProjectsContext();
+
   return (
     <ul>
-      <ProjectItem>
-        <ProjectName>Projeto 1</ProjectName>
-        <ProjectTasksAmount>1 / 3</ProjectTasksAmount>
-        <ProjectActions>
-          <IconButton icon={NotePencil} iconProps={{ size: 20 }} />
-          <IconButton icon={Trash} iconProps={{ size: 20 }} />
-        </ProjectActions>
-      </ProjectItem>
-
-      <ProjectItem>
-        <ProjectName>Projeto 1</ProjectName>
-        <ProjectTasksAmount>1 / 3</ProjectTasksAmount>
-        <ProjectActions>
-          <IconButton icon={NotePencil} iconProps={{ size: 20 }} />
-          <IconButton icon={Trash} iconProps={{ size: 20 }} />
-        </ProjectActions>
-      </ProjectItem>
-
-      <ProjectItem>
-        <ProjectName>Projeto 1</ProjectName>
-        <ProjectTasksAmount>1 / 3</ProjectTasksAmount>
-        <ProjectActions>
-          <IconButton icon={NotePencil} iconProps={{ size: 20 }} />
-          <IconButton icon={Trash} iconProps={{ size: 20 }} />
-        </ProjectActions>
-      </ProjectItem>
+      {data.projects.map(project => (
+        <ProjectItem key={project.id}>
+          <ProjectName>{project.title}</ProjectName>
+          <ProjectTasksAmount>0 / 0</ProjectTasksAmount>
+          <ProjectActions>
+            <IconButton icon={NotePencil} iconProps={{ size: 20 }} />
+            <IconButton icon={Trash} iconProps={{ size: 20 }} />
+          </ProjectActions>
+        </ProjectItem>
+      ))}
     </ul>
   );
 };
