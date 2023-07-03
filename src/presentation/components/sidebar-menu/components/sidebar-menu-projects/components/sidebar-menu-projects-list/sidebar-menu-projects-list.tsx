@@ -9,7 +9,7 @@ import {
 } from './sidebar-menu-projects-list-styles';
 
 export const SidebarMenuProjectsList = () => {
-  const { data } = useProjectsContext();
+  const { data, handlers } = useProjectsContext();
 
   return (
     <ul>
@@ -19,7 +19,11 @@ export const SidebarMenuProjectsList = () => {
           <ProjectTasksAmount>0 / 0</ProjectTasksAmount>
           <ProjectActions>
             <IconButton icon={NotePencil} iconProps={{ size: 20 }} />
-            <IconButton icon={Trash} iconProps={{ size: 20 }} />
+            <IconButton
+              icon={Trash}
+              iconProps={{ size: 20 }}
+              onClick={() => handlers.deleteProject(project.id)}
+            />
           </ProjectActions>
         </ProjectItem>
       ))}
