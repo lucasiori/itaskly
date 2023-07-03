@@ -11,8 +11,7 @@ const ProjectsContext = createContext<ProjectsContextValue>(
 
 export const ProjectsContextProvider = ({
   children,
-  loadProject,
-  createProject,
+  ...props
 }: ProjectsContextProps) => {
   const [data, setData] = useState<ProjectsContextValue['data']>({
     projects: [],
@@ -35,33 +34,54 @@ export const ProjectsContextProvider = ({
     });
   };
 
-  const create = async (title: string) => {
-    const lastProjectId = Number(data.projects.at(-1)?.id ?? 0);
-    const newProject: ProjectModel = {
-      id: String(lastProjectId + 1),
-      title,
-      status: 'pending',
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    };
+  const createProject = async (title: string) => {
+    try {
+      const lastProjectId = Number(data.projects.at(-1)?.id ?? 0);
+      const newProject: ProjectModel = {
+        id: String(lastProjectId + 1),
+        title,
+        status: 'pending',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      };
 
-    await createProject.create(newProject);
+      await props.createProject.create(newProject);
 
-    setData({ projects: [...data.projects, newProject] });
+      setData({ projects: [...data.projects, newProject] });
+    } catch {
+      alert(
+        'Ocorreu um erro ao criar o novo projeto, por favor tente novamente.'
+      );
+    }
+  };
+
+  const deleteProject = async (id: string) => {
+    try {
+      const isValidProject = data.projects.some(project => project.id === id);
+
+      if (!isValidProject) {
+        alert('Projeto não existe');
+        return;
+      }
+
+      await props.deleteProject.delete(id);
+
+      setData({ projects: data.projects.filter(project => project.id !== id) });
+    } catch {
+      alert('Ocorreu um erro ao excluir o projeto, por favor tente novamente.');
+    }
   };
 
   useEffect(() => {
-    loadProject.loadAll().then(onLoadSuccess).catch(onLoadError);
-  }, [loadProject]);
+    props.loadProject.loadAll().then(onLoadSuccess).catch(onLoadError);
+  }, [props.loadProject]);
 
   return (
     <ProjectsContext.Provider
       value={{
         data,
         state,
-        handlers: {
-          createProject: create,
-        },
+        handlers: { createProject, deleteProject },
       }}
     >
       {children}
