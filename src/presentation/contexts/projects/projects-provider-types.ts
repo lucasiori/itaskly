@@ -1,4 +1,4 @@
-import type { ProjectModel } from '@domain/models';
+import type { ProjectModel, ProjectStatus } from '@domain/models';
 import {
   CreateProject,
   DeleteProject,
@@ -17,7 +17,7 @@ export type ProjectsContextValue = {
   };
   handlers: {
     createProject: (title: string) => void;
-    changeProjectStatus: (id: string, status: ProjectModel['status']) => void;
+    changeProjectStatus: (id: string, status: ProjectStatus) => void;
     deleteProject: (id: string) => void;
   };
 };

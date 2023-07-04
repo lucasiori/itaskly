@@ -3,7 +3,7 @@ import type {
   ProjectsContextProps,
   ProjectsContextValue,
 } from './projects-provider-types';
-import { ProjectModel } from '@domain/models';
+import { ProjectModel, ProjectStatus } from '@domain/models';
 
 const ProjectsContext = createContext<ProjectsContextValue>(
   {} as ProjectsContextValue
@@ -58,10 +58,7 @@ export const ProjectsContextProvider = ({
     }
   };
 
-  const changeProjectStatus = async (
-    id: string,
-    status: ProjectModel['status']
-  ) => {
+  const changeProjectStatus = async (id: string, status: ProjectStatus) => {
     try {
       const project = data.projects.find(project => project.id === id);
 

@@ -1,4 +1,4 @@
-import type { ProjectModel } from '@domain/models';
+import type { ProjectModel, ProjectStatus } from '@domain/models';
 
 export type StyledProjectNameProps = {
   $completed: boolean;
@@ -6,6 +6,6 @@ export type StyledProjectNameProps = {
 
 export type ProjectsListProps = {
   projects: ProjectModel[];
-  onChangeProjectStatus: (id: string, status: ProjectModel['status']) => void;
+  onChangeProjectStatus: (id: string, status: ProjectStatus) => void;
   onDeleteProject: (id: string) => void;
 };

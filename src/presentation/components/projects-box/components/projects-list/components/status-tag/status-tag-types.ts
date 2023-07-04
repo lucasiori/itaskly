@@ -1,6 +1,4 @@
-import { ProjectModel } from '@domain/models';
-
-type ProjectStatus = ProjectModel['status'];
+import { ProjectStatus } from '@domain/models';
 
 export type StyledStatusTagContainerProps = {
   $status: ProjectStatus;
