@@ -36,7 +36,9 @@ export const ProjectsContextProvider = ({
 
   const createProject = async (title: string) => {
     try {
-      const lastProjectId = Number(data.projects.at(-1)?.id ?? 0);
+      const lastProject = data.projects[data.projects.length - 1];
+      const lastProjectId = lastProject ? Number(lastProject.id) : 0;
+
       const newProject: ProjectModel = {
         id: String(lastProjectId + 1),
         title,

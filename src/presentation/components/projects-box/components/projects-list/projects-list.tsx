@@ -16,7 +16,13 @@ export const ProjectsList = ({
   onDeleteProject,
 }: ProjectsListProps) => {
   const sortedProjects = useMemo(() => {
-    return projects.sort().reverse();
+    const rawProjects = [...projects];
+
+    return rawProjects.sort((item1, item2) => {
+      if (item1.status === 'completed' && item2.status === 'pending') return 1;
+      if (item1.status === 'pending' && item2.status === 'completed') return -1;
+      return 0;
+    });
   }, [projects]);
 
   const handleChangeProjectStatus = (id: string, isCompleted: boolean) => {
