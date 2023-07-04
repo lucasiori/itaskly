@@ -18,4 +18,5 @@ module.exports = {
     '^@presentation/(.*)': '<rootDir>/src/presentation/$1',
     '^@main/(.*)': '<rootDir>/src/main/$1',
   },
+  setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
 };
