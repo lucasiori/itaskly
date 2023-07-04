@@ -1,19 +1,19 @@
-import { CheckCircle, Trash } from '@phosphor-icons/react';
-import { IconButton } from '../icon-button';
+import { CheckCircle, XCircle } from '@phosphor-icons/react';
+import { IconButton } from '../../../icon-button';
 import { useNewProject } from './hooks';
 import {
-  AddNewProjectContainer,
+  NewProjectFormContainer,
   NewProjectInputContainer,
   NewProjectActions,
   NewProjectInput,
-} from './add-new-project-styles';
-import type { AddNewProjectProps } from './add-new-project-types';
+} from './new-project-form-styles';
+import type { NewProjectFormProps } from './new-project-form-types';
 
-export const AddNewProject = ({
+export const NewProjectForm = ({
   isAdding,
   onSave,
   onCancel,
-}: AddNewProjectProps) => {
+}: NewProjectFormProps) => {
   const { state, metadata, handlers } = useNewProject({
     isAdding,
     onSave,
@@ -21,7 +21,7 @@ export const AddNewProject = ({
   });
 
   return (
-    <AddNewProjectContainer $isAddingNewProject={metadata.isAdding}>
+    <NewProjectFormContainer $isAddingNewProject={metadata.isAdding}>
       <NewProjectInputContainer $hasError={metadata.hasError}>
         <NewProjectInput
           type="text"
@@ -41,13 +41,14 @@ export const AddNewProject = ({
           title="Salvar projeto"
           onClick={handlers.save}
         />
+
         <IconButton
-          icon={Trash}
+          icon={XCircle}
           iconProps={{ size: 20 }}
           title="Cancelar"
           onClick={handlers.cancel}
         />
       </NewProjectActions>
-    </AddNewProjectContainer>
+    </NewProjectFormContainer>
   );
 };

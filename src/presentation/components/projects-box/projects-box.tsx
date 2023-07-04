@@ -3,9 +3,9 @@ import { PlusCircle } from '@phosphor-icons/react';
 import { useProjectsContext } from '@presentation/contexts';
 import { AppLogo } from '../app-logo';
 import { IconButton } from '../icon-button';
-import { ProjectsList } from '../projects-list';
-import { AddNewProject } from '../add-new-project';
+import { NewProjectForm, ProjectsList } from './components';
 import {
+  AddButtonContainer,
   ProjectsBoxContainer,
   ProjectsBoxFooter,
   ProjectsBoxHeader,
@@ -26,11 +26,13 @@ export const ProjectsBox = () => {
       <ProjectsBoxHeader>
         <h2>Meus projetos</h2>
 
-        <IconButton
-          icon={PlusCircle}
-          iconProps={{ size: 32, weight: 'regular' }}
-          onClick={() => setIsAddingNewProject(true)}
-        />
+        <AddButtonContainer $isAddingNewProject={isAddingNewProject}>
+          <IconButton
+            icon={PlusCircle}
+            iconProps={{ size: 32, weight: 'regular' }}
+            onClick={() => setIsAddingNewProject(true)}
+          />
+        </AddButtonContainer>
       </ProjectsBoxHeader>
 
       <ProjectsList
@@ -38,7 +40,7 @@ export const ProjectsBox = () => {
         onDeleteProject={handlers.deleteProject}
       />
 
-      <AddNewProject
+      <NewProjectForm
         isAdding={isAddingNewProject}
         onSave={handleCreateNewProject}
         onCancel={() => setIsAddingNewProject(false)}

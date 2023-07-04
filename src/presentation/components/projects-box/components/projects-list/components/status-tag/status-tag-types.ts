@@ -1,11 +1,11 @@
 import { ProjectModel } from '@domain/models';
 
-type Status = ProjectModel['status'];
+type ProjectStatus = ProjectModel['status'];
 
 export type StyledStatusTagContainerProps = {
-  $status: Status;
+  $status: ProjectStatus;
 };
 
 export type StatusTagProps = {
-  status: ProjectModel['status'];
+  status: ProjectStatus;
 };

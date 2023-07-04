@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { StatusTag } from '.';
 import { theme } from '@presentation/styles';
+import { StatusTag } from '.';
 
 describe('Presentation | Components | StatusTag', () => {
   describe('when rendering', () => {

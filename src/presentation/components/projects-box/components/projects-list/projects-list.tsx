@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 import { Trash } from '@phosphor-icons/react';
-import { Checkbox } from '../checkbox';
-import { IconButton } from '../icon-button';
-import { StatusTag } from '../status-tag';
+import { Checkbox } from '../../../checkbox';
+import { IconButton } from '../../../icon-button';
+import { StatusTag } from './components';
 import {
   ProjectItem,
   ProjectActions,

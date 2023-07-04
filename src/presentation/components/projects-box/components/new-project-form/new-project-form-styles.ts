@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { theme } from '@presentation/styles';
 import type {
   StyledNewProjectInputContainerProps,
-  StyledAddNewProjectContainerProps,
-} from './add-new-project-types';
+  StyledNewProjectFormContainerProps,
+} from './new-project-form-types';
 
-export const AddNewProjectContainer = styled.div<StyledAddNewProjectContainerProps>`
+export const NewProjectFormContainer = styled.div<StyledNewProjectFormContainerProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;

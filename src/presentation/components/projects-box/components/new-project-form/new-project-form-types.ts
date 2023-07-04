@@ -1,4 +1,4 @@
-export type StyledAddNewProjectContainerProps = {
+export type StyledNewProjectFormContainerProps = {
   $isAddingNewProject: boolean;
 };
 
@@ -6,7 +6,7 @@ export type StyledNewProjectInputContainerProps = {
   $hasError: boolean;
 };
 
-export type AddNewProjectProps = {
+export type NewProjectFormProps = {
   isAdding: boolean;
   onSave: (title: string) => void;
   onCancel: () => void;

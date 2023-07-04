@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { theme } from '@presentation/styles';
+import type { StyledAddButtonContainerProps } from './projects-box-types';
 
 export const ProjectsBoxContainer = styled.section`
   width: 100%;
@@ -20,6 +21,11 @@ export const ProjectsBoxHeader = styled.header`
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 3rem;
+`;
+
+export const AddButtonContainer = styled.div<StyledAddButtonContainerProps>`
+  opacity: ${({ $isAddingNewProject }) => ($isAddingNewProject ? 0 : 1)};
+  transition: opacity 150ms ease-in-out;
 `;
 
 export const ProjectsBoxFooter = styled.footer`
