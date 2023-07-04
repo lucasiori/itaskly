@@ -24,6 +24,7 @@ export const ProjectsBoxHeader = styled.header`
 `;
 
 export const AddButtonContainer = styled.div<StyledAddButtonContainerProps>`
+  display: flex;
   opacity: ${({ $isAddingNewProject }) => ($isAddingNewProject ? 0 : 1)};
   transition: opacity 150ms ease-in-out;
 `;

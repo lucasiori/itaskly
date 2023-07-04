@@ -1,4 +1,5 @@
 import { Icon } from '@presentation/components/icon';
+import { IconButtonContainer } from './icon-button-styles';
 import type { IconButtonProps } from './icon-button-types';
 
 export const IconButton = ({
@@ -7,8 +8,8 @@ export const IconButton = ({
   ...otherProps
 }: IconButtonProps) => {
   return (
-    <button type="button" {...otherProps}>
+    <IconButtonContainer type="button" {...otherProps}>
       <Icon icon={icon} {...iconProps} />
-    </button>
+    </IconButtonContainer>
   );
 };
