@@ -12,7 +12,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${theme.colors.background};
+    height: 100vh;
+    background: ${`linear-gradient(135deg, rgba(119, 75, 247, 0.50) 0%, ${theme.colors.purple} 48.44%, rgba(119, 75, 247, 0.50) 100%)`};
   }
 
   ul {
