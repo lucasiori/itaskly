@@ -7,6 +7,7 @@ import {
   NewProjectActions,
   NewProjectInput,
 } from './new-project-form-styles';
+import type { FormEventHandler } from 'react';
 import type { NewProjectFormProps } from './new-project-form-types';
 
 export const NewProjectForm = ({
@@ -20,8 +21,16 @@ export const NewProjectForm = ({
     onCancel,
   });
 
+  const handleSubmit: FormEventHandler<HTMLFormElement> = event => {
+    event.preventDefault();
+    handlers.save();
+  };
+
   return (
-    <NewProjectFormContainer $isAddingNewProject={metadata.isAdding}>
+    <NewProjectFormContainer
+      $isAddingNewProject={metadata.isAdding}
+      onSubmit={handleSubmit}
+    >
       <NewProjectInputContainer $hasError={metadata.hasError}>
         <NewProjectInput
           type="text"
@@ -36,10 +45,10 @@ export const NewProjectForm = ({
 
       <NewProjectActions>
         <IconButton
+          type="submit"
           icon={CheckCircle}
           iconProps={{ size: 20 }}
           title="Salvar projeto"
-          onClick={handlers.save}
         />
 
         <IconButton

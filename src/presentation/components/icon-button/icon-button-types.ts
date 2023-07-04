@@ -1,4 +1,4 @@
-import { ComponentProps } from 'react';
+import { ButtonHTMLAttributes, ComponentProps } from 'react';
 import type { Icon } from '@presentation/components/icon';
 
 export type IconButtonProps = {
@@ -7,4 +7,4 @@ export type IconButtonProps = {
   title?: string;
   disabled?: boolean;
   onClick?: () => void;
-};
+} & ButtonHTMLAttributes<HTMLButtonElement>;

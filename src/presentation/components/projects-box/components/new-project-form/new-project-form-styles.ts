@@ -5,7 +5,7 @@ import type {
   StyledNewProjectFormContainerProps,
 } from './new-project-form-types';
 
-export const NewProjectFormContainer = styled.div<StyledNewProjectFormContainerProps>`
+export const NewProjectFormContainer = styled.form<StyledNewProjectFormContainerProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
