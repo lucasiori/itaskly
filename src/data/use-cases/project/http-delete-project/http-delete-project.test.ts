@@ -21,9 +21,7 @@ describe('Data | Use cases | Project | HttpDeleteProject', () => {
       await sut.delete(project.id);
 
       expect(httpClientSpy.callsCount).toBe(1);
-      expect(httpClientSpy.url).toBe(
-        `${HttpEndpoints.DELETE_PROJECT}/${project.id}`
-      );
+      expect(httpClientSpy.url).toBe(`${HttpEndpoints.PROJECTS}/${project.id}`);
       expect(httpClientSpy.method).toBe(HttpMethods.DELETE);
     });
 

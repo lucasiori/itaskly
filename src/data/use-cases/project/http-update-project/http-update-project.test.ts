@@ -21,9 +21,7 @@ describe('Data | Use cases | Project | HttpUpdateProject', () => {
       await sut.update(project);
 
       expect(httpClientSpy.callsCount).toBe(1);
-      expect(httpClientSpy.url).toBe(
-        `${HttpEndpoints.UPDATE_PROJECT}/${project.id}`
-      );
+      expect(httpClientSpy.url).toBe(`${HttpEndpoints.PROJECTS}/${project.id}`);
       expect(httpClientSpy.method).toBe(HttpMethods.PUT);
       expect(httpClientSpy.body).toEqual(project);
     });

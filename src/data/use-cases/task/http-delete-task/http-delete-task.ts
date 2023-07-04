@@ -10,7 +10,7 @@ export class HttpDeleteTask implements DeleteTask {
     try {
       await this.httpClient.request({
         method: HttpMethods.DELETE,
-        url: `${HttpEndpoints.DELETE_TASK}/${id}`,
+        url: `${HttpEndpoints.TASKS}/${id}`,
       });
     } catch {
       throw new UnknownError();

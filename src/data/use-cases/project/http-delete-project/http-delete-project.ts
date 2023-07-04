@@ -10,7 +10,7 @@ export class HttpDeleteProject implements DeleteProject {
     try {
       await this.httpClient.request({
         method: HttpMethods.DELETE,
-        url: `${HttpEndpoints.DELETE_PROJECT}/${id}`,
+        url: `${HttpEndpoints.PROJECTS}/${id}`,
       });
     } catch {
       throw new UnknownError();

@@ -21,7 +21,7 @@ describe('Data | Use cases | Project | HttpCreateProject', () => {
       await sut.create(project);
 
       expect(httpClientSpy.callsCount).toBe(1);
-      expect(httpClientSpy.url).toBe(HttpEndpoints.CREATE_PROJECT);
+      expect(httpClientSpy.url).toBe(HttpEndpoints.PROJECTS);
       expect(httpClientSpy.method).toBe(HttpMethods.POST);
       expect(httpClientSpy.body).toEqual(project);
     });

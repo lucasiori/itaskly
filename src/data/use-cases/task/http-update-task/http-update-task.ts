@@ -11,7 +11,7 @@ export class HttpUpdateTask implements UpdateTask {
     try {
       await this.httpClient.request({
         method: HttpMethods.PUT,
-        url: `${HttpEndpoints.UPDATE_TASK}/${task.id}`,
+        url: `${HttpEndpoints.TASKS}/${task.id}`,
         body: task,
       });
     } catch {

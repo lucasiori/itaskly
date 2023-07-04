@@ -21,7 +21,7 @@ describe('Data | Use cases | Task | HttpDeleteTask', () => {
       await sut.delete(task.id);
 
       expect(httpClientSpy.callsCount).toBe(1);
-      expect(httpClientSpy.url).toBe(`${HttpEndpoints.DELETE_TASK}/${task.id}`);
+      expect(httpClientSpy.url).toBe(`${HttpEndpoints.TASKS}/${task.id}`);
       expect(httpClientSpy.method).toBe(HttpMethods.DELETE);
     });
 

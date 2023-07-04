@@ -11,7 +11,7 @@ export class HttpLoadTask implements LoadTask {
     try {
       const response = await this.httpClient.request<TaskModel[]>({
         method: HttpMethods.GET,
-        url: HttpEndpoints.LOAD_TASK,
+        url: HttpEndpoints.TASKS,
       });
 
       return response.data;
@@ -24,7 +24,7 @@ export class HttpLoadTask implements LoadTask {
     try {
       const response = await this.httpClient.request<TaskModel>({
         method: HttpMethods.GET,
-        url: HttpEndpoints.LOAD_TASK,
+        url: HttpEndpoints.TASKS,
         queryParams: { id },
       });
 
@@ -38,7 +38,7 @@ export class HttpLoadTask implements LoadTask {
     try {
       const response = await this.httpClient.request<TaskModel[]>({
         method: HttpMethods.GET,
-        url: HttpEndpoints.LOAD_TASK,
+        url: HttpEndpoints.TASKS,
         queryParams: { project_id: projectId },
       });
 

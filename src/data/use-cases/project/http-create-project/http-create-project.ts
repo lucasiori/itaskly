@@ -11,7 +11,7 @@ export class HttpCreateProject implements CreateProject {
     try {
       await this.httpClient.request({
         method: HttpMethods.POST,
-        url: HttpEndpoints.CREATE_PROJECT,
+        url: HttpEndpoints.PROJECTS,
         body: project,
       });
     } catch {

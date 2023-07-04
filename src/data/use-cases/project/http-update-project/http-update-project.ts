@@ -11,7 +11,7 @@ export class HttpUpdateProject implements UpdateProject {
     try {
       await this.httpClient.request({
         method: HttpMethods.PUT,
-        url: `${HttpEndpoints.UPDATE_PROJECT}/${project.id}`,
+        url: `${HttpEndpoints.PROJECTS}/${project.id}`,
         body: project,
       });
     } catch {

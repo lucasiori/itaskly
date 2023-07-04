@@ -20,7 +20,7 @@ describe('Data | Use cases | Project | HttpLoadProject', () => {
       await sut.loadAll();
 
       expect(httpClientSpy.callsCount).toBe(1);
-      expect(httpClientSpy.url).toBe(HttpEndpoints.LOAD_PROJECT);
+      expect(httpClientSpy.url).toBe(HttpEndpoints.PROJECTS);
       expect(httpClientSpy.method).toBe(HttpMethods.GET);
     });
 

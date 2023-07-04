@@ -11,7 +11,7 @@ export class HttpLoadProject implements LoadProject {
     try {
       const response = await this.httpClient.request<ProjectModel[]>({
         method: HttpMethods.GET,
-        url: HttpEndpoints.LOAD_PROJECT,
+        url: HttpEndpoints.PROJECTS,
       });
 
       return response.data;

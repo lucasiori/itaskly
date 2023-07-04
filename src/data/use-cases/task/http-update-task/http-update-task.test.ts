@@ -21,7 +21,7 @@ describe('Data | Use cases | Task | HttpUpdateTask', () => {
       await sut.update(task);
 
       expect(httpClientSpy.callsCount).toBe(1);
-      expect(httpClientSpy.url).toBe(`${HttpEndpoints.UPDATE_TASK}/${task.id}`);
+      expect(httpClientSpy.url).toBe(`${HttpEndpoints.TASKS}/${task.id}`);
       expect(httpClientSpy.method).toBe(HttpMethods.PUT);
       expect(httpClientSpy.body).toEqual(task);
     });

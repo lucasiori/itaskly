@@ -11,7 +11,7 @@ export class HttpCreateTask implements CreateTask {
     try {
       await this.httpClient.request({
         method: HttpMethods.POST,
-        url: HttpEndpoints.CREATE_TASK,
+        url: HttpEndpoints.TASKS,
         body: task,
       });
     } catch {

@@ -21,7 +21,7 @@ describe('Data | Use cases | Task | HttpLoadTask', () => {
       await sut.loadAll();
 
       expect(httpClientSpy.callsCount).toBe(1);
-      expect(httpClientSpy.url).toBe(HttpEndpoints.LOAD_TASK);
+      expect(httpClientSpy.url).toBe(HttpEndpoints.TASKS);
       expect(httpClientSpy.method).toBe(HttpMethods.GET);
     });
 
@@ -56,7 +56,7 @@ describe('Data | Use cases | Task | HttpLoadTask', () => {
       await sut.loadById(id);
 
       expect(httpClientSpy.callsCount).toBe(1);
-      expect(httpClientSpy.url).toBe(HttpEndpoints.LOAD_TASK);
+      expect(httpClientSpy.url).toBe(HttpEndpoints.TASKS);
       expect(httpClientSpy.method).toBe(HttpMethods.GET);
       expect(httpClientSpy.queryParams).toEqual({ id });
     });
@@ -93,7 +93,7 @@ describe('Data | Use cases | Task | HttpLoadTask', () => {
       await sut.loadAllByProject(projectId);
 
       expect(httpClientSpy.callsCount).toBe(1);
-      expect(httpClientSpy.url).toBe(HttpEndpoints.LOAD_TASK);
+      expect(httpClientSpy.url).toBe(HttpEndpoints.TASKS);
       expect(httpClientSpy.method).toBe(HttpMethods.GET);
       expect(httpClientSpy.queryParams).toEqual({ project_id: projectId });
     });

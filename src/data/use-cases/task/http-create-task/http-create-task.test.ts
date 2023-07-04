@@ -21,7 +21,7 @@ describe('Data | Use cases | Task | HttpCreateTask', () => {
       await sut.create(task);
 
       expect(httpClientSpy.callsCount).toBe(1);
-      expect(httpClientSpy.url).toBe(HttpEndpoints.CREATE_TASK);
+      expect(httpClientSpy.url).toBe(HttpEndpoints.TASKS);
       expect(httpClientSpy.method).toBe(HttpMethods.POST);
       expect(httpClientSpy.body).toEqual(task);
     });
