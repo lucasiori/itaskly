@@ -1,4 +1,4 @@
-import { SidebarMenu } from '@presentation/components';
+import { ProjectsBox } from '@presentation/components';
 import { GlobalStyle } from '@presentation/styles';
 import { DashboardContainer } from './dashboard-styles';
 import { ProjectsContextProvider } from '@presentation/contexts';
@@ -25,7 +25,7 @@ export const Dashboard = () => {
         deleteProject={deleteProject}
       >
         <DashboardContainer>
-          <SidebarMenu />
+          <ProjectsBox />
         </DashboardContainer>
       </ProjectsContextProvider>
     </>
