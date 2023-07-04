@@ -7,6 +7,7 @@ import { NewProjectForm, ProjectsList } from './components';
 import {
   AddButtonContainer,
   ProjectsBoxContainer,
+  ProjectsBoxContent,
   ProjectsBoxFooter,
   ProjectsBoxHeader,
 } from './projects-box-styles';
@@ -35,17 +36,21 @@ export const ProjectsBox = () => {
         </AddButtonContainer>
       </ProjectsBoxHeader>
 
-      <ProjectsList
-        projects={data.projects}
-        onChangeProjectStatus={handlers.changeProjectStatus}
-        onDeleteProject={handlers.deleteProject}
-      />
+      <ProjectsBoxContent>
+        {data.projects.length > 0 ? (
+          <ProjectsList
+            projects={data.projects}
+            onChangeProjectStatus={handlers.changeProjectStatus}
+            onDeleteProject={handlers.deleteProject}
+          />
+        ) : null}
 
-      <NewProjectForm
-        isAdding={isAddingNewProject}
-        onSave={handleCreateNewProject}
-        onCancel={() => setIsAddingNewProject(false)}
-      />
+        <NewProjectForm
+          isAdding={isAddingNewProject}
+          onSave={handleCreateNewProject}
+          onCancel={() => setIsAddingNewProject(false)}
+        />
+      </ProjectsBoxContent>
 
       <ProjectsBoxFooter>
         <AppLogo />

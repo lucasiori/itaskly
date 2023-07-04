@@ -20,13 +20,19 @@ export const ProjectsBoxHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 `;
 
 export const AddButtonContainer = styled.div<StyledAddButtonContainerProps>`
   display: flex;
   opacity: ${({ $isAddingNewProject }) => ($isAddingNewProject ? 0 : 1)};
   transition: opacity 150ms ease-in-out;
+`;
+
+export const ProjectsBoxContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 `;
 
 export const ProjectsBoxFooter = styled.footer`

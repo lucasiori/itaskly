@@ -4,7 +4,6 @@ import type { StyledProjectNameProps } from './projects-list-types';
 
 export const ProjectsListContainer = styled.ul`
   max-height: 260px;
-  margin-bottom: 1.5rem;
   overflow-y: scroll;
   scrollbar-width: 0.25rem;
   scrollbar-color: ${theme.colors.subtitle};
