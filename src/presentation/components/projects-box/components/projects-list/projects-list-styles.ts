@@ -2,6 +2,27 @@ import styled from 'styled-components';
 import { theme } from '@presentation/styles';
 import type { StyledProjectNameProps } from './projects-list-types';
 
+export const ProjectsListContainer = styled.ul`
+  max-height: 260px;
+  margin-bottom: 1.5rem;
+  overflow-y: scroll;
+  scrollbar-width: 0.25rem;
+  scrollbar-color: ${theme.colors.subtitle};
+
+  ::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: ${theme.colors.white};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${theme.colors.subtitle};
+    border-radius: 0.25rem;
+  }
+`;
+
 export const ProjectItem = styled.li`
   display: flex;
   align-items: center;

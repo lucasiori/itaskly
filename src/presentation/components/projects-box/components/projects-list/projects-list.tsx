@@ -7,6 +7,7 @@ import {
   ProjectItem,
   ProjectActions,
   ProjectName,
+  ProjectsListContainer,
 } from './projects-list-styles';
 import type { ProjectsListProps } from './projects-list-types';
 
@@ -32,7 +33,7 @@ export const ProjectsList = ({
   };
 
   return (
-    <ul>
+    <ProjectsListContainer>
       {sortedProjects.map(project => (
         <ProjectItem key={project.id} data-testid="projects-list-item">
           <div>
@@ -60,6 +61,6 @@ export const ProjectsList = ({
           </div>
         </ProjectItem>
       ))}
-    </ul>
+    </ProjectsListContainer>
   );
 };
