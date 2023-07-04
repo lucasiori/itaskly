@@ -3,7 +3,7 @@ import {
   RouterProvider,
   Navigate,
 } from 'react-router-dom';
-import { Dashboard, NotFound } from '@presentation/pages';
+import { makeDashboard, makeNotFound } from '@main/factories/pages';
 
 const router = createBrowserRouter([
   {
@@ -12,11 +12,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    element: <Dashboard />,
+    element: makeDashboard(),
   },
   {
     path: '*',
-    element: <NotFound />,
+    element: makeNotFound(),
   },
 ]);
 
