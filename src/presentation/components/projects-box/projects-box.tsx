@@ -37,6 +37,7 @@ export const ProjectsBox = () => {
 
       <ProjectsList
         projects={data.projects}
+        onChangeProjectStatus={handlers.changeProjectStatus}
         onDeleteProject={handlers.deleteProject}
       />
 

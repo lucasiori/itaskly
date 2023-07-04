@@ -6,5 +6,6 @@ export type StyledProjectNameProps = {
 
 export type ProjectsListProps = {
   projects: ProjectModel[];
+  onChangeProjectStatus: (id: string, status: ProjectModel['status']) => void;
   onDeleteProject: (id: string) => void;
 };

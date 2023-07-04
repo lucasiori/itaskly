@@ -12,11 +12,18 @@ import type { ProjectsListProps } from './projects-list-types';
 
 export const ProjectsList = ({
   projects,
+  onChangeProjectStatus,
   onDeleteProject,
 }: ProjectsListProps) => {
   const sortedProjects = useMemo(() => {
     return projects.sort().reverse();
   }, [projects]);
+
+  const handleChangeProjectStatus = (id: string, isCompleted: boolean) => {
+    const newStatus = isCompleted ? 'completed' : 'pending';
+
+    onChangeProjectStatus(id, newStatus);
+  };
 
   return (
     <ul>
@@ -26,6 +33,7 @@ export const ProjectsList = ({
             <Checkbox
               id={project.id}
               checked={project.status === 'completed'}
+              onChange={value => handleChangeProjectStatus(project.id, value)}
             />
 
             <ProjectName $completed={project.status === 'completed'}>

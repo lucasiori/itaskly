@@ -16,7 +16,7 @@ export const Checkbox = ({
 
   return (
     <>
-      <StyledCheckbox htmlFor={id} $checked={checked} />
+      <StyledCheckbox role="checkbox" htmlFor={id} $checked={checked} />
 
       <input
         type="checkbox"
