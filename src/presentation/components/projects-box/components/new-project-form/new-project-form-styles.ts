@@ -10,7 +10,7 @@ export const NewProjectFormContainer = styled.form<StyledNewProjectFormContainer
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 0.25rem 0;
+  padding-right: 0.25rem;
   opacity: ${({ $isAddingNewProject }) => ($isAddingNewProject ? 1 : 0)};
   transition: opacity 150ms ease-in-out;
 `;

@@ -32,7 +32,7 @@ export const AddButtonContainer = styled.div<StyledAddButtonContainerProps>`
 export const ProjectsBoxContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.75rem;
 `;
 
 export const ProjectsBoxFooter = styled.footer`

@@ -30,11 +30,15 @@ export const ProjectItem = styled.li`
 
   > div {
     display: flex;
-    flex: 0 0 50%;
     align-items: center;
     gap: 0.75rem;
 
+    &:first-child {
+      flex: 0 0 70%;
+    }
+
     &:last-child {
+      flex: 0 0 30%;
       justify-content: flex-end;
     }
   }
