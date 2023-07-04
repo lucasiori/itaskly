@@ -1,4 +1,4 @@
-type ProjectStatus = 'pending' | 'in-progress' | 'completed';
+export type ProjectStatus = 'pending' | 'completed';
 
 export type ProjectModel = {
   id: string;

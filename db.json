@@ -1,3 +1,32 @@
 {
-  "projects": []
+  "projects": [
+    {
+      "id": "1",
+      "title": "Primeiro site com HTML/CSS",
+      "status": "completed",
+      "createdAt": "2023-07-04T20:00:08.259Z",
+      "updatedAt": "2023-07-04T20:00:49.294Z"
+    },
+    {
+      "id": "2",
+      "title": "Calculadora",
+      "status": "pending",
+      "createdAt": "2023-07-04T20:00:12.396Z",
+      "updatedAt": "2023-07-04T20:00:12.396Z"
+    },
+    {
+      "id": "3",
+      "title": "Lista de tarefas",
+      "status": "pending",
+      "createdAt": "2023-07-04T20:00:17.896Z",
+      "updatedAt": "2023-07-04T20:00:17.896Z"
+    },
+    {
+      "id": "4",
+      "title": "E-commerce",
+      "status": "pending",
+      "createdAt": "2023-07-04T20:00:23.007Z",
+      "updatedAt": "2023-07-04T20:00:23.007Z"
+    }
+  ]
 }
