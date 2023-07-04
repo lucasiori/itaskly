@@ -10,6 +10,7 @@ import {
   HttpCreateProjectSpy,
   HttpDeleteProjectSpy,
   HttpLoadProjectSpy,
+  HttpUpdateProjectSpy,
 } from '@data/test';
 import {
   ProjectsContextProps,
@@ -22,23 +23,23 @@ type MakeSutProps = {
   renderContextHook?: boolean;
 };
 
-const renderContextProvider = (props: ProjectsContextProps) => {
-  return <ProjectsContextProvider {...props} />;
-};
-
 const makeSut = (props: MakeSutProps = {}) => {
   const httpLoadProjectSpy = new HttpLoadProjectSpy();
   const httpCreateProjectSpy = new HttpCreateProjectSpy();
+  const httpUpdateProjectSpy = new HttpUpdateProjectSpy();
   const httpDeleteProjectSpy = new HttpDeleteProjectSpy();
   let hook: RenderHookResult<ProjectsContextValue, unknown> | undefined;
 
+  const useCasesProps: Omit<ProjectsContextProps, 'children'> = {
+    loadProject: httpLoadProjectSpy,
+    createProject: httpCreateProjectSpy,
+    updateProject: httpUpdateProjectSpy,
+    deleteProject: httpDeleteProjectSpy,
+  };
+
   if (props.renderContextComponent) {
     render(
-      <ProjectsContextProvider
-        loadProject={httpLoadProjectSpy}
-        createProject={httpCreateProjectSpy}
-        deleteProject={httpDeleteProjectSpy}
-      >
+      <ProjectsContextProvider {...useCasesProps}>
         <span>projects context children</span>
       </ProjectsContextProvider>
     );
@@ -47,12 +48,7 @@ const makeSut = (props: MakeSutProps = {}) => {
   if (props.renderContextHook) {
     hook = renderHook(useProjectsContext, {
       wrapper: (props: { children: ReactNode }) => {
-        return renderContextProvider({
-          loadProject: httpLoadProjectSpy,
-          createProject: httpCreateProjectSpy,
-          deleteProject: httpDeleteProjectSpy,
-          ...props,
-        });
+        return <ProjectsContextProvider {...useCasesProps} {...props} />;
       },
     });
   }
@@ -61,6 +57,7 @@ const makeSut = (props: MakeSutProps = {}) => {
     hook,
     httpLoadProjectSpy,
     httpCreateProjectSpy,
+    httpUpdateProjectSpy,
     httpDeleteProjectSpy,
   };
 };
@@ -78,17 +75,18 @@ describe('Presentation | Contexts | ProjectsContext', () => {
 
   describe('when rendering the hook', () => {
     describe('and creating a new project', () => {
-      it('calls "create" from HttpCreateProject', async () => {
+      it('calls "create" from HttpCreateProject providing the project', async () => {
         const { hook, httpLoadProjectSpy, httpCreateProjectSpy } = makeSut({
           renderContextHook: true,
         });
+        const { projects } = httpLoadProjectSpy;
+        const lastProjectId = Number(projects[projects.length - 1].id);
 
         await waitFor(() => hook?.result.current);
         await act(async () => {
           hook?.result.current.handlers.createProject('test');
         });
 
-        const lastProjectId = Number(httpLoadProjectSpy.projects.at(-1)?.id);
         expect(httpCreateProjectSpy.project).toEqual({
           id: String(lastProjectId + 1),
           title: 'test',
@@ -99,19 +97,40 @@ describe('Presentation | Contexts | ProjectsContext', () => {
       });
     });
 
-    describe('and deleting a project', () => {
-      it('calls "delete" from HttpDeleteProject', async () => {
-        const { hook, httpLoadProjectSpy, httpDeleteProjectSpy } = makeSut({
+    describe('and changing the project status', () => {
+      it('calls "update" from HttpUpdateProject providing the project with the new status', async () => {
+        const { hook, httpLoadProjectSpy, httpUpdateProjectSpy } = makeSut({
           renderContextHook: true,
         });
-        const lastProjectId = String(httpLoadProjectSpy.projects.at(-1)?.id);
+        const projectId = String(httpLoadProjectSpy.projects[0].id);
 
         await waitFor(() => hook?.result.current);
         await act(async () => {
-          hook?.result.current.handlers.deleteProject(lastProjectId);
+          hook?.result.current.handlers.changeProjectStatus(
+            projectId,
+            'completed'
+          );
         });
 
-        expect(httpDeleteProjectSpy.projectId).toBe(lastProjectId);
+        expect(httpUpdateProjectSpy.project).toEqual(
+          expect.objectContaining({ status: 'completed' })
+        );
+      });
+    });
+
+    describe('and deleting a project', () => {
+      it('calls "delete" from HttpDeleteProject providing the project id', async () => {
+        const { hook, httpLoadProjectSpy, httpDeleteProjectSpy } = makeSut({
+          renderContextHook: true,
+        });
+        const projectId = String(httpLoadProjectSpy.projects[0].id);
+
+        await waitFor(() => hook?.result.current);
+        await act(async () => {
+          hook?.result.current.handlers.deleteProject(projectId);
+        });
+
+        expect(httpDeleteProjectSpy.projectId).toBe(projectId);
       });
     });
   });
