@@ -11,6 +11,10 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
+  html {
+    background-color: ${theme.colors.primary};
+  }
+
   body {
     height: 100vh;
     background: ${`linear-gradient(135deg, rgba(119, 75, 247, 0.50) 0%, ${theme.colors.purple} 48.44%, rgba(119, 75, 247, 0.50) 100%)`};
