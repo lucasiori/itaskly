@@ -10,13 +10,19 @@ const makeSut = () => {
     mockProjectModel(),
     mockProjectModel(),
   ];
-  const mockDeleteProject = jest.fn();
+
+  const onChangeProjectStatusMock = jest.fn();
+  const onDeleteProjectMock = jest.fn();
 
   render(
-    <ProjectsList projects={projects} onDeleteProject={mockDeleteProject} />
+    <ProjectsList
+      projects={projects}
+      onChangeProjectStatus={onChangeProjectStatusMock}
+      onDeleteProject={onDeleteProjectMock}
+    />
   );
 
-  return { projects, mockDeleteProject };
+  return { projects, onChangeProjectStatusMock, onDeleteProjectMock };
 };
 
 describe('Presentation | Components | ProjectsList', () => {
@@ -30,14 +36,28 @@ describe('Presentation | Components | ProjectsList', () => {
     });
   });
 
+  describe('when changing a project status', () => {
+    it('calls the "onChangeProjectStatus" providing the project id and the new status', async () => {
+      const user = userEvent.setup();
+      const { projects, onChangeProjectStatusMock } = makeSut();
+
+      await user.click(screen.getAllByRole('checkbox')[0]);
+
+      expect(onChangeProjectStatusMock).toHaveBeenCalledWith(
+        projects[0].id,
+        'completed'
+      );
+    });
+  });
+
   describe('when deleting a project', () => {
     it('calls the "onDeleteProject" providing the project id', async () => {
       const user = userEvent.setup();
-      const { projects, mockDeleteProject } = makeSut();
+      const { projects, onDeleteProjectMock } = makeSut();
 
       await user.click(screen.getAllByRole('button')[0]);
 
-      expect(mockDeleteProject).toHaveBeenCalledWith(projects[0].id);
+      expect(onDeleteProjectMock).toHaveBeenCalledWith(projects[0].id);
     });
   });
 });
