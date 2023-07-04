@@ -55,12 +55,44 @@ export const ProjectsContextProvider = ({
     }
   };
 
+  const changeProjectStatus = async (
+    id: string,
+    status: ProjectModel['status']
+  ) => {
+    try {
+      const project = data.projects.find(project => project.id === id);
+
+      if (!project) {
+        alert('Projeto não encontrado.');
+        return;
+      }
+
+      const updatedProject: ProjectModel = {
+        ...project,
+        status,
+        updatedAt: new Date(),
+      };
+
+      await props.updateProject.update(updatedProject);
+
+      setData({
+        projects: data.projects.map(project => {
+          return project.id === id ? updatedProject : project;
+        }),
+      });
+    } catch {
+      alert(
+        'Ocorreu um erro ao atualizar o status do projeto, por favor tente novamente.'
+      );
+    }
+  };
+
   const deleteProject = async (id: string) => {
     try {
       const isValidProject = data.projects.some(project => project.id === id);
 
       if (!isValidProject) {
-        alert('Projeto não existe');
+        alert('Projeto não encontrado.');
         return;
       }
 
@@ -81,7 +113,11 @@ export const ProjectsContextProvider = ({
       value={{
         data,
         state,
-        handlers: { createProject, deleteProject },
+        handlers: {
+          createProject,
+          changeProjectStatus,
+          deleteProject,
+        },
       }}
     >
       {children}
