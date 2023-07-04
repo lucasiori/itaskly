@@ -21,6 +21,10 @@ export const ProjectsContextProvider = ({
     error: null,
   });
 
+  const setErrorMessage = (message: string) => {
+    setState({ loading: false, error: message });
+  };
+
   const onLoadSuccess = (response: ProjectModel[]) => {
     setData({ projects: response });
     setState({ loading: true, error: null });
@@ -28,10 +32,7 @@ export const ProjectsContextProvider = ({
 
   const onLoadError = () => {
     setData({ projects: [] });
-    setState({
-      loading: false,
-      error: 'Ocorreu um erro ao buscar os projetos.',
-    });
+    setErrorMessage('Ocorreu um erro ao buscar os projetos.');
   };
 
   const createProject = async (title: string) => {
@@ -51,7 +52,7 @@ export const ProjectsContextProvider = ({
 
       setData({ projects: [...data.projects, newProject] });
     } catch {
-      alert(
+      setErrorMessage(
         'Ocorreu um erro ao criar o novo projeto, por favor tente novamente.'
       );
     }
@@ -65,7 +66,7 @@ export const ProjectsContextProvider = ({
       const project = data.projects.find(project => project.id === id);
 
       if (!project) {
-        alert('Projeto não encontrado.');
+        setErrorMessage('Projeto não encontrado.');
         return;
       }
 
@@ -83,7 +84,7 @@ export const ProjectsContextProvider = ({
         }),
       });
     } catch {
-      alert(
+      setErrorMessage(
         'Ocorreu um erro ao atualizar o status do projeto, por favor tente novamente.'
       );
     }
@@ -94,7 +95,7 @@ export const ProjectsContextProvider = ({
       const isValidProject = data.projects.some(project => project.id === id);
 
       if (!isValidProject) {
-        alert('Projeto não encontrado.');
+        setErrorMessage('Projeto não encontrado.');
         return;
       }
 
@@ -102,12 +103,15 @@ export const ProjectsContextProvider = ({
 
       setData({ projects: data.projects.filter(project => project.id !== id) });
     } catch {
-      alert('Ocorreu um erro ao excluir o projeto, por favor tente novamente.');
+      setErrorMessage(
+        'Ocorreu um erro ao excluir o projeto, por favor tente novamente.'
+      );
     }
   };
 
   useEffect(() => {
     props.loadProject.loadAll().then(onLoadSuccess).catch(onLoadError);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.loadProject]);
 
   return (
