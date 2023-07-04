@@ -1,4 +1,4 @@
 export enum HttpEndpoints {
-  PROJECTS = '/tasks',
+  PROJECTS = '/projects',
   TASKS = '/tasks',
 }

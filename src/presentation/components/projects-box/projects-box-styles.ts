@@ -12,7 +12,7 @@ export const ProjectsBoxContainer = styled.section`
   justify-content: flex-start;
   background-color: ${theme.colors.white};
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 2rem 1.75rem 2rem 2rem;
 `;
 
 export const ProjectsBoxHeader = styled.header`
