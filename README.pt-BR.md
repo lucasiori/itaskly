@@ -8,12 +8,12 @@
 </h1>
 
 <p align="center">
-  <a href="#about">About</a> &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="#techs">Technologies</a> &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="#preview">Preview</a>
+  <a href="#about">Sobre</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#techs">Tecnologias</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#preview">Demonstração</a>
 </p>
 
-<h2 id="about">ℹ About</h2>
+<h2 id="about">ℹ Sobre</h2>
 
 <p><strong>iTaskly</strong> é uma aplicação web desenvolvida para ajudá-lo a gerenciar seus projetos de forma eficiente.</p>
 <p>Ele atua como uma ferramenta de gestão de projetos, onde você pode organizar, acompanhar e manter seus projetos em um local centralizado.</p>
