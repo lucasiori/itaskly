@@ -20,9 +20,6 @@
 <p><strong>iTaskly</strong> é uma aplicação web desenvolvida para ajudá-lo a gerenciar seus projetos de forma eficiente.</p>
 <p>Ele atua como uma ferramenta de gestão de projetos, onde você pode organizar, acompanhar e manter seus projetos em um local centralizado.</p>
 <p>Com o iTaskly, você pode facilmente adicionar, excluir, marcar como concluído e consultar seus projetos com facilidade.</p>
-
-<br />
-
 <p>Este projeto é semelhante a um aplicativo de lista de tarefas, mas foi especificamente adaptado para gerenciar projetos.</p>
 <p>O foco principal deste projeto é demonstrar a implementação de princípios de arquitetura limpa.</p>
 <p>O projeto consiste nos componentes front-end, enquanto o back-end é simulado usando dados falsos.</p>
@@ -47,8 +44,6 @@
 </ul>
 
 <p>A lista acima inclui apenas as tecnologias primárias utilizadas no projeto iTaskly. Bibliotecas adicionais, ferramentas e frameworks podem ter sido utilizados como dependências para funcionalidades específicas.</p>
-
-<br />
 
 <h2 id="preview">👀 Demonstração</h2>
 
