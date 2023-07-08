@@ -3,11 +3,9 @@
   <a href="https://github.com/lucasiori/itaskly/blob/main/README.pt-BR.md">🇧🇷 Português</a>
 </p>
 
-<p align="center">
+<h1 align="center">
   <img src="https://github.com/lucasiori/itaskly/blob/main/.github/logo.png" alt="Logo" />
-</p>
-
-<h1 align="center">iTaskly</h1>
+</h1>
 
 <p align="center">
   <a href="#about">About</a> &nbsp;&nbsp;|&nbsp;&nbsp;
